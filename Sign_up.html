@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html ng-app="validation">
+
+<head>
+    <link rel="stylesheet" href="signup.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://code.angularjs.org/1.4.4/angular-messages.js"></script>
+    <script src="signup.js"></script>
+</head>
+
+<body class="container" ng-controller="RegistrationController as registration">
+    <h1>Welcome To The Sign up Page</h1>
+    <h3>{{ registration.message }}</h3>
+    <form name="registrationForm" novalidate
+          ng-submit="registration.submit(registrationForm.$valid)">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="name" class="form-control" placeholder="Name" ng-model="registration.user.name" required />
+            <div ng-messages="registrationForm.name.$error">
+                <div ng-messages-include="message.html"></div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <label>Email Address:</label>
+            <input type="text" name="email" class="form-control" placeholder="Email Address" ng-model="registration.user.email" required />
+            <div ng-messages="registrationForm.email.$error">
+                <div ng-messages-include="message.html"></div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <label>College:</label>
+            <input type="text" name="college" class="form-control" placeholder="College" ng-model="registration.user.college" required />
+            <div ng-messages="registrationForm.college.$error">
+                <div ng-messages-include="message.html"></div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <label>Address:</label>
+            <input type="text" name="address" class="form-control" placeholder="Address" ng-model="registration.user.address" required />
+            <div ng-messages="registrationForm.address.$error">
+                <div ng-messages-include="message.html"></div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <label>Phone No:</label>
+            <input type="text" name="phone" class="form-control" placeholder="Phone no." ng-model="registration.user.phone" required />
+            <div ng-messages="registrationForm.phone.$error">
+                <div ng-messages-include="message.html"></div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" ng-model="registration.user.password" required />
+            <div ng-messages="registrationForm.password.$error">
+                <div ng-messages-include="message.html"></div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <label>Confirm Password:</label>
+            <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password"
+                   ng-model="registration.user.confirmPassword"
+                   required compare-to="registration.user.password" />
+            <div ng-messages="registrationForm.confirmPassword.$error">
+                <div ng-messages-include="message.html"></div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" ng-click="openWindow">Register</button>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <title>Booklist</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+    <script src="Booklist.js"></script>
+    <link href="Booklist.css" rel="stylesheet" />
+</head>
+<body ng-controller="myController">
+    <h1>Welcome To The online Book Store</h1>
+    <button type="submit" class="btn1" ng-click="openWindow('logout')">Logout</button>
+    <input type="text" placeholder="Search Book Name or Author" ng-model="searchText" />
+    <br /><br />
+    <table>
+        <thead>
+            <tr>
+                <th>Book_id</th>
+                <th>User_id</th>
+                <th>Bname</th>
+                <th>Author</th>
+                <th>Condn</th>
+                <th ng-click="sortData()">
+                    Price <div ng-class="getSortClass()"></div>
+                </th>
+                <th>Wishlist</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in names | filter: search | orderBy:sortColumn:reverseSort">
+                <td>{{x.Book_id}}</td>
+                <td>{{x.User_id}}</td>
+                <td>{{x.Bname}}</td>
+                <td>{{x.Author}}</td>
+                <td>{{x.condn}}</td>
+                <td>{{x.price}}</td>
+                <td><button class="btn2" ng-model="add" ng-click="addbook(x.Book_id)">Add</button></td>
+            </tr>
+        </tbody>
+    </table><br /><br />
+    <button type="submit" class="btn3" ng-click="openWindow('wishlist')">Wishlist</button>
+</body>
+</html>

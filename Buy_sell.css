@@ -1,0 +1,30 @@
+﻿body {
+    background-image: url("https://wallup.net/wp-content/uploads/2017/11/22/327871-books-library-bokeh-depth_of_field-748x534.jpg");
+    background-size: cover;
+}
+
+.btn {
+    opacity:0.9;
+    margin: 300px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+button {
+    cursor: pointer;
+    font-weight:bold;
+    padding: 15px;
+    font-size:40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #ffd800;
+    color: red; 
+    border-color: red;
+}

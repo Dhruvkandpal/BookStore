@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+    <script src="Wishlist.js"></script>
+    <link href="Wishlist.css" rel="stylesheet"/>
+</head>
+<body ng-controller="myController">
+    <h1>Wishlist</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User_id</th>
+                <th>Book_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in names">
+                <td>{{x.userID}}</td>
+                <td>{{x.bookID}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
